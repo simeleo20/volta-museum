@@ -7,7 +7,12 @@ Inizialmente creremo il sito cosi con html e js normale poi implementiamo django
 
 lavorare nella cartella sito_no_django
 
-# NON LEGGERE DA QUI IN POI
+
+
+
+
+
+# NON LEGGERE DA QUI IN POI (fino a che iniziamo a usare django)
 
 ## appena entri
 
