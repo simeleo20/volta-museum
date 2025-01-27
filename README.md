@@ -8,6 +8,9 @@ Inizialmente creremo il sito cosi con html e js normale poi implementiamo django
 lavorare nella cartella sito_no_django
 
 ## appena entri
+
+sudo apt update
+
 sudo apt install git
 
 sudo apt install python3-full
