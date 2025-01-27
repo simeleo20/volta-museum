@@ -7,6 +7,14 @@ Inizialmente creremo il sito cosi con html e js normale poi implementiamo django
 
 lavorare nella cartella sito_no_django
 
+## appena entri
+sudo apt install git
+
+sudo apt install python3-full
+
+git config --global user.email "you@example.com"
+
+git config --global user.name "Your Name"
 
 
 
@@ -14,13 +22,6 @@ lavorare nella cartella sito_no_django
 
 # NON LEGGERE DA QUI IN POI (fino a che iniziamo a usare django)
 
-## appena entri
-
-sudo apt install python3-full
-
-git config --global user.email "you@example.com"
-
-git config --global user.name "Your Name"
 
 ## roba da fare ogni volta che entri
 
