@@ -1,11 +1,106 @@
 {% extends "baseTemplate.html" %}
 
 {% block title %}
-  Home
+  Museo Volta - Home
 {% endblock %}
 
+{% block head %}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .navbar select {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .hero {
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      position: relative;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .gallery img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+{% endblock %}
 
 {% block body %}
-  <h1>Museo Volta</h1>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#">Menù</a>
+    <select onchange="location = this.value;">
+      <option value="#">Seleziona una sezione</option>
+      <option value="/arte-moderna">Arte Moderna</option>
+      <option value="/storia-antica">Storia Antica</option>
+      <option value="/scienza-tecnologia">Scienza e Tecnologia</option>
+      <option value="/contatti">Contatti</option>
+    </select>
+  </div>
 
+  <!-- Sezione Hero -->
+  <div class="hero" style="background-image: url('https://abbonamentomusei.it/wp-content/uploads/2024/02/Tempio-Voltiano-4-scaled.jpg?x12227');">
+    <div>
+      <h1>Benvenuti al Museo Volta</h1>
+      <p>Esplora la storia, l'arte e la scienza attraverso le nostre collezioni uniche.</p>
+    </div>
+  </div>
+
+  <!-- Galleria immagini -->
+  <div class="gallery container">
+    <img src="https://www.visitcomo.eu/export/sites/default/img/musei/mattonelle/interno-tempio.jpg_71196558.jpg" alt="Immagine 1">
+    <img src="https://c8.alamy.com/compit/h33t9a/tempio-voltiano-tempio-voltiano-un-museo-a-como-italia-dedicata-ad-alessandro-volta-uno-scienziato-e-inventore-h33t9a.jpg" alt="Immagine 2">
+    <img src="https://www.espansionetv.it/wp-content/uploads/2022/01/Como-Tempio-Voltiano-3.jpg" alt="Immagine 3">
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2023 Museo Volta. Tutti i diritti riservati.</p>
+    <p>Contatti: <a href="mailto:info@museovolta.it" style="color: white;">info@museovolta.it</a></p>
+  </div>
 {% endblock %}
