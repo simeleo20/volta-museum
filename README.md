@@ -15,7 +15,7 @@ git config --global user.email "you@example.com"
 
 git config --global user.name "Your Name"
 
-
+installare python extension
 
 
 
@@ -27,3 +27,7 @@ git config --global user.name "Your Name"
 source .venv/bin/activate   (se non compare nel terminale "(volta-museum) user@user-VirtualBox:~/museo volta/volta-museum")
 
 cd volta_museum/   (se non si è gia nella cartella giusta)
+
+
+python manage.py makemigrations pages
+python manage.py migrate
