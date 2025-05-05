@@ -1,5 +1,6 @@
 // script.js
 
+const basePath = 'static/immagini'
 // Array di nomi di file delle immagini nella cartella "immagini"
 const images = ["pila.png", "elettroforo.png",]; // Aggiungi altre immagini qui
 
@@ -33,7 +34,7 @@ function loadNewImageAndWord() {
   secretWord = extractWordFromImage(currentImage);
 
   // Imposta l'immagine nell'elemento HTML
-  imageElement.src = `immagini/${currentImage}`;
+  imageElement.src = `${basePath}/${currentImage}`;
 
   // Resetta il tabellone di gioco
   gameBoard.innerHTML = "";

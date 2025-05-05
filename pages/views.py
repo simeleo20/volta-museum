@@ -7,6 +7,10 @@ def home(request):
     template = loader.get_template("home.html")
     return HttpResponse(template.render())
 
+def gioco(request):
+    template = loader.get_template("gioco.html")
+    return HttpResponse(template.render())
+
 def item(request, item_name):
     template = loader.get_template("item.html")
     context = {
