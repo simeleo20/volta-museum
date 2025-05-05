@@ -17,3 +17,7 @@ def item(request, item_name):
 
     }
     return HttpResponse(template.render())
+
+def images(request):
+    allimages = Image.objects.all()
+    return render(request, 'images.html',{'images': allimages})
