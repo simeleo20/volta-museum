@@ -34,6 +34,7 @@ class Restoration(models.Model):
         default="RESTORATION"
     )
     description = models.CharField(max_length=1000)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, null=True, blank=True)  # ForeignKey to Item model
 
 
 class Event(models.Model):
