@@ -1,13 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-  <title>{% block title %}{% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museo Volta - {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   {% block head %}{% endblock %}
 </head>
 <body>
+  <!-- Header con barre di navigazione -->
+  <header id="site-header">
+    <!-- Barra superiore con ricerca e lingua -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <span>MUSEO VOLTA</span>
+          </a>
+        </div>
+        <div class="top-bar-right">
+          <div class="search-box">
+            <form action="/search" method="get">
+              <input type="text" placeholder="Cerca..." name="q">
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+          <div class="language-selector">
+            <select>
+              <option value="it">Italiano</option>
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Barra menu principale -->
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="nav-menu">
+          <li class="menu-item has-submenu">
+            <a href="#" class="menu-link">Visita</a>
+            <ul class="submenu">
+              <li><a href="/visita/pianifica">Pianifica la tua visita</a></li>
+              <li><a href="/visita/orari">Tariffe e orari</a></li>
+            </ul>
+          </li>
+          <li class="menu-item has-submenu">
+            <a href="#" class="menu-link">Esplora</a>
+            <ul class="submenu">
+              <li><a href="/esplora/opere">Opere e invenzioni</a></li>
+              <li><a href="/esplora/vita">La vita di Volta</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="/gioca" class="menu-link">Gioca</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Breadcrumb (visibile solo nelle pagine interne) -->
+    {% if request.path != '/' %}
+    <div class="breadcrumb">
+      <div class="container">
+        <ul>
+          <li><a href="/">Home</a></li>
+          {% block breadcrumb %}{% endblock %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+  </header>
 
-{% block body %}
-{% endblock %}
+  <!-- Banner principale (personalizzabile per ogni pagina) -->
+  {% block banner %}{% endblock %}
 
+  <!-- Contenuto principale -->
+  <main>
+    <div class="container">
+      {% block body %}{% endblock %}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Museo Volta</h3>
+          <p>Via Alessandro Volta, 1<br>22100 Como, Italia</p>
+          <p>Tel: +39 031 123456<br>Email: info@museovolta.it</p>
+        </div>
+        <div class="footer-section">
+          <h3>Orari di apertura</h3>
+          <p>Martedì - Domenica: 9:00 - 18:00<br>Lunedì: Chiuso</p>
+        </div>
+        <div class="footer-section">
+          <h3>Seguici</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Museo Volta. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+  {% block scripts %}{% endblock %}
 </body>
 </html>
