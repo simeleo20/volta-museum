@@ -2,7 +2,7 @@
 
 const basePath = 'static/immagini'
 // Array di nomi di file delle immagini nella cartella "immagini"
-const images = ["pila.png", "elettroforo.png",]; // Aggiungi altre immagini qui
+const images = ["pila.png", "elettroforo.png",]; // aggiungere piu immaginii
 
 let remainingImages = [...images]; // Copia dell'array per tenere traccia delle immagini rimanenti
 let currentImage = null;
@@ -25,7 +25,7 @@ function loadNewImageAndWord() {
     return;
   }
 
-  // Seleziona casualmente un'immagine dall'elenco rimanente
+  // Seleziona casualmente un'immagine 
   const randomIndex = Math.floor(Math.random() * remainingImages.length);
   currentImage = remainingImages[randomIndex];
   remainingImages.splice(randomIndex, 1); // Rimuove l'immagine dall'elenco
