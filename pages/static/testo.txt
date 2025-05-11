@@ -18,3 +18,7 @@ metti solo un collage stile louvre e un titolo con poi il pulsante "scopri di pi
 - pusante ricerca a destra, e pulsante lingua a sinitra
 - vedi le pagine di tariffe e orari tutto su visitcomo e pianifica la visita vedi se si può aggiungere
   l'API di openstreetmap con leaflet (guarda es. fatto in tpsit)
+
+aggiornamento:
+fatto tutto manca solo la pagina di orari e pianifica con mappa
+mettere a posto la parte info e orari della home
