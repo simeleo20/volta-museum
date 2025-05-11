@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block banner %}
-<div class="main-banner" style="background-image: url('/static/images/header-home.jpg');">
+<div class="main-banner" style="background-image: url('/static/images/tempio-voltiano-from-distance.jpg');">
   <div class="banner-overlay"></div>
   <div class="banner-content">
     <h1>Benvenuto/a</h1>
@@ -15,31 +15,28 @@
 {% block body %}
 <section class="highlights">
   <h2 class="section-title">In evidenza</h2>
-  <div class="highlights-grid">
+  <div class="highlights-grid-horizontal">
     <div class="highlight-card">
-      <div class="highlight-image" style="background-image: url('/static/images/pila.jpg');"></div>
-      <div class="highlight-content">
-        <h3>La Pila di Volta</h3>
-        <p>La prima batteria elettrica della storia, inventata nel 1799, che ha rivoluzionato la scienza.</p>
-        <a href="/esplora/opere#pila" class="highlight-link">Scopri di più</a>
+      <a href="/esplora/opere#pila">
+        <img src="/static/images/pila.jpg" alt="pila" class="highlight-image">
+        <h1 class="image-title">La Pila di Volta</h1>
+      </a>
       </div>
     </div>
     
-    <div class="highlight-card">
-      <div class="highlight-image" style="background-image: url('/static/images/elettroforo.png');"></div>
-      <div class="highlight-content">
-        <h3>L'Elettroforo</h3>
-        <p>Uno strumento per generare cariche elettriche statiche, inventato da Volta nel 1775.</p>
-        <a href="/esplora/opere#elettroforo" class="highlight-link">Scopri di più</a>
+    <div class="highlights-grid-vertical">
+      <div class="highlight-card">
+        <a href="/esplora/opere#pila">
+        <img src="/static/images/elettroscopio.jpg" alt="elettroscopio" class="highlight-image">
+        <h1 class="image-title">L'Elettroscopio</h1>
+        </a>
       </div>
-    </div>
-    
-    <div class="highlight-card">
-      <div class="highlight-image" style="background-image: url('/static/images/pistola.jpg');"></div>
-      <div class="highlight-content">
-        <h3>La Pistola di Volta</h3>
-        <p>Un dispositivo che dimostra l'esplosività delle miscele di gas, precursore del motore a combustione.</p>
-        <a href="/esplora/opere.html" class="highlight-link">Scopri di più</a>
+      
+      <div class="highlight-card">
+        <a href="/esplora/opere#pila">
+        <img src="/static/images/pistola.jpg" alt="pistola" class="highlight-image">
+        <h1 class="image-title">La Pistola</h1>
+        </a>
       </div>
     </div>
   </div>
