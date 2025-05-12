@@ -4,6 +4,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+path('gioco2', views.gioco2, name='gioco2'),
 urlpatterns = [
     path('', views.home, name='home'),
     path('item/<str:item_name>', views.item, name='item'),
