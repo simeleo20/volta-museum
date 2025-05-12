@@ -18,7 +18,8 @@ def opere(request):
     return render(request, 'esplora/opere.html', {'items': allitems})
 
 def vita_volta(request):
-    return render(request, 'esplora/vita.html')
+    allevents = Event.objects.all()
+    return render(request, 'esplora/vita.html', {'events': allevents})
 
 def gioca_wordle(request):
     return render(request, 'gioca/wordle.html')

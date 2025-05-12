@@ -17,7 +17,10 @@
 
 {% block body %}
 <section class="page-content">
-  <h2>La biografia di Alessandro Volta</h2>
-  <p>da aggiungere in seguito... Masce</p>
+  {% for event in events %}
+    <h2>{{ event.year }} - {{ event.name }} - {{event.location}}</h2>
+    <p>{{ event.description }}</p>
+
+  {% endfor %}
 </section>
 {% endblock %}
