@@ -1,0 +1,11 @@
+---- LEGGI ----
+All'interno di templates sono presenti le pagine che dovrete modificare.
+all'interno delle file dei diretti interessati noterete che vi è già scrito dove andare a incollare il codice.
+
+-- NON TOCCARE baseTemplate.html e home.html --
+
+all'interno della cartella "static" son presenti css,js e font necessari al corretto funzionamento delle pagine dal lato grafico
+-- NON RINOMINARE, ELIMINARE o MODIFICARE I FILE - questa versione non è totalmente funzionante dal lato grafico per cui non toccare --
+
+sempre all'interno di static, vi è il file "testo.txt" QUELLO SI PUÒ ELIMINARE nel caso dia fastidio, 
+a meno che non è già stato eliminato da me, contiene solo pensieri sullo sviluppo futuro delle pagine principali e della base.

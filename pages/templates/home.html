@@ -1,0 +1,66 @@
+{% extends "baseTemplate.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block banner %}
+<div class="main-banner" style="background-image: url('/static/images/tempio-voltiano-from-distance.jpg');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <span class="home-banner-title">Scopri il genio di Alessandro Volta<br>e le sue invenzioni rivoluzionarie</span>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<!-- sezione con opere in evidenza -->
+<section class="highlights">
+  <h1 class="inevidenza">IN EVIDENZA</h1>
+  <div class="highlights-grid-horizontal">
+    <div class="highlight-card">
+      <a href="/esplora/opere#pila">
+        <img src="/static/images/pila.jpg" alt="pila" class="immagine" height="600" width="600">
+        <h1 class="image-title">LA PILA DI VOLTA</h1>
+      </a>
+    </div>
+    
+    <div class="highlights-grid-vertical">
+      <div class="highlight-card">
+        <a href="/esplora/opere#pila">
+        <img src="/static/images/elettroscopio.jpg" alt="elettroscopio" class="immagine" height="300" >
+        <h1 class="image-title">L'ELETTROSCOPIO</h1>
+        </a>
+      </div>
+      
+      <div class="highlight-card">
+        <a href="/esplora/opere#pila">
+        <img src="/static/images/pistola.jpg" alt="pistola" class="immagine" width="400">
+        <h1 class="image-title">LA PISTOLA A GAS</h1>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- sezione con orari e tariffe-->
+<section class="info-orari">
+  <div class="info-orari-container">
+    <h1 class="info-orari-title">INFO E ORARI</h1>
+    <div class="info-orari-grid">
+      <div class="info-orari-card">
+        <h2>aperto dal martedì alla domenica</h2>
+        <h1 class="time">10:00 - 18:00</h1>
+        <h2>chiuso il lunedì</h2>
+        <a href="/visita/pianifica">scopri di più sugli orari <i class="fas fa-arrow-right"></i></a>
+        <br>
+        <h2>Viale Marconi, 1, 22100, Como</h2>
+        <a href="/visita/pianifica">come raggiungerci <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="info-orari-card">
+        <h2>biglietti a partire da:</h2>
+        <h1 class="price">€ 5,00</h1>
+        <a href="/visita/orari">scopri le tariffe <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

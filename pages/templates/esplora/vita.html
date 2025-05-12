@@ -1,0 +1,26 @@
+{% extends "baseTemplate.html" %}
+
+{% block title %}La vita di Volta{% endblock %}
+
+{% block breadcrumb %}
+<li><span style="color: #666666;">Esplora</span><li><a href="/esplora/vita">La vita di Volta</a></li>
+{% endblock %}
+
+{% block banner %}
+<div class="page-banner" style="background-image: url('/static/images/volta.jpg');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h1>La vita di Volta</h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<section class="page-content">
+  {% for event in events %}
+    <h2>{{ event.year }} - {{ event.name }} - {{event.location}}</h2>
+    <p>{{ event.description }}</p>
+
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,454 @@
+/* Importazione di Google Fonts - Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+/* Importazione di Google Fonts - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Importazione del font personalizzato NyghtSerif */
+@font-face {
+  font-family: 'Nyght Serif';
+  src: url('/static/fonts/NyghtSerif-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset e stili di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    color: #000000;
+  }
+  
+  .container {
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Header e navigazione */
+  #site-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+  
+  .header-hidden {
+    transform: translateY(-100%);
+  }
+  
+  /* Barra superiore */
+  .top-bar {
+    background-color: #000000;
+    color: #fff;
+    padding: 15px 0;
+  }
+  
+  .top-bar .container {
+    background: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-family: "Nyght Serif", serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .logo a{
+    margin-left: 80px;
+  }
+  
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box {
+    margin-right: 20px;
+  }
+  
+  .search-box form {
+    display: flex;
+    align-items: center;
+    border: 2px solid #8b8b8b;
+    border-radius: 30px;
+  }
+  
+  .search-box input {
+    padding: 8px 12px;
+    color: #fff;
+    background: #000000;
+    border: none;
+    border-radius: 30px 0px 0px 30px;
+    width: 70px;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .search-box button {
+    background: #000000;
+    color: #8b8b8b;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0px 30px 30px 0px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .language-selector select {
+    padding: 8px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-style: bold;
+  }
+  
+  /* Menu principale */
+  .main-nav {
+    background-color: #000000;
+    color: #fff;
+    border-top: 1px solid #272727;
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu-item {
+    position: relative;
+  }
+  
+  .menu-link {
+    display: block;
+    padding: 15px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: #000000 1px solid;
+  }
+  
+  .menu-link:hover {
+    border-bottom: #4a4a4a 1px solid;
+  }
+
+  .submenu {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+  }
+  
+  .has-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .submenu li a {
+    display: block;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+    background-color: #000000;
+  }
+
+  .destra {
+    padding: 12px 25px 12px 1000px;
+  }
+
+  .sinistra {
+    padding: 12px 1000px 12px 25px;
+  }
+  
+  /* Breadcrumb */
+  .breadcrumb {
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin: 0 10px;
+    color: #999;
+  }
+  
+  .breadcrumb a {
+    color: #666;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Banner principale */
+  .main-banner {
+    position: relative;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    margin-top: 115px; /* Altezza dell'header */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    text-align: start;
+  }
+  
+  .page-banner {
+    position: relative;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    margin-top: 115px; /* Altezza dell'header */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: #fff;
+    text-align: flex-start;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-left: 50px;
+    font-family: 'Nyght Serif', serif;
+  }
+
+  .home-banner-title {
+    font-size: 50px;
+    font-weight: 300;
+    font-family: 'Nyght Serif', serif;
+  }
+  
+  .banner-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-family: 'Nyght Serif', serif;
+  }
+  
+  .banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Sezione Highlights */
+  .highlights {
+    padding: 30px 25px;
+  }
+  
+  .inevidenza {
+    text-align: left;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-family: 'Nyght Serif', serif;
+    font-size: 50px;
+    letter-spacing: 4px;
+  }
+  
+  .highlights-grid-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .highlights-grid-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .highlight-card {
+    overflow: hidden;
+    transition: transform 0.3s;
+    font-family: 'Nyght Serif', serif;
+    font-size: 14px;
+    letter-spacing: 7px;
+  }
+  
+  .highlight-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .immagine {
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .highlight-content {
+    padding: 20px;
+  }
+  
+  .highlight-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-family: 'Nyght Serif', serif;
+  }
+  
+  .highlight-content p {
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .highlight-link {
+    display: inline-block;
+    color: #000;
+    font-weight: 500;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+  }
+  
+  .highlight-link:hover {
+    color: #555;
+    border-color: #555;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 60px 0 20px;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    background-color: #555;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+  }
+
+  .orari {
+    display: flex;
+  }
+
+  .aperto {
+    padding-left: 50px;
+  }
+  
+  /* Contenuto principale */
+  main {
+    min-height: 500px;
+    padding: 40px 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .top-bar .container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+    }
+  
+    .submenu {
+      position: static;
+      width: 100%;
+      display: none;
+    }
+  
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+  
+    .banner-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .banner-content p {
+      font-size: 1.2rem;
+    }
+  
+    .main-banner {
+      height: 50vh;
+    }
+  
+    .page-banner {
+      height: 30vh;
+    }
+  }

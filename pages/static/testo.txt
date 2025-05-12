@@ -1,0 +1,24 @@
+per i titoli: nyght-serif-font
+https://fontmeme.com/fonts/nyght-serif-font/
+
+per il resto, valuta:
+Monserrat: https://fonts.google.com/specimen/Montserrat?preview.text=La%20prima%20batteria%20elettrica%20della%20storia,%20inventata%20nel%201799,%20che%20ha%20rivoluzionato%20la%20scienza.
+Raleway: https://fonts.google.com/specimen/Raleway?preview.text=La%20prima%20batteria%20elettrica%20della%20storia,%20inventata%20nel%201799,%20che%20ha%20rivoluzionato%20la%20scienza.
+Raleway meglio perché in bold700 per i titoletti è più leggibile rispetto a monserrat
+Grassetto: 700
+Corpo: 500
+
+l'idea ora:
+- fare tutta la parte di homepage in statica, in evidenza, non mettere descrizione o altro,
+metti solo un collage stile louvre e un titolo con poi il pulsante "scopri di più".
+- headers con allineamento in centro
+- modifica la grafica delle cose, lingua e barra di ricerca (fare come un bottone che si espande se possibile)
+- invece della barra di ricerca, quando si clicca cerca, sotto il menu appare la barra
+- il sottomenu che appare sarebbe bello farlo lungo tutto, non solo i riquadrini (come quello Louvre)
+- pusante ricerca a destra, e pulsante lingua a sinitra
+- vedi le pagine di tariffe e orari tutto su visitcomo e pianifica la visita vedi se si può aggiungere
+  l'API di openstreetmap con leaflet (guarda es. fatto in tpsit)
+
+aggiornamento:
+fatto tutto manca solo la pagina di orari e pianifica con mappa
+mettere a posto la parte info e orari della home
