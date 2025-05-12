@@ -21,14 +21,16 @@
   <p>da aggiungere in seguito... Masce</p>
   {% for item in items %}
     <section class="item-card">
-      <div class="item-image">
-        <img src="{{ item.image.img.url }}" alt="{{ item.name }}">
-      </div>
-      <div class="item-details">
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
-        <a href="/item/{{ item.name }}" class="btn">Scopri di più</a>
-      </div>
+      <a href="/item/{{ item.name }}" >
+        <div class="item-image">
+          <img src="{{ item.image.img.url }}" alt="{{ item.name }}">
+        </div>
+        <div class="item-details">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+
+        </div>
+      </a>
     </section>
   {% endfor %}
 </section>
