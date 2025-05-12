@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import Item, Event, Restoration, Image
 
 def home(request):
     return render(request, 'home.html')
@@ -12,7 +13,9 @@ def orari(request):
     return render(request, 'visita/orari.html')
 
 def opere(request):
-    return render(request, 'esplora/opere.html')
+    allitems = Item.objects.all()
+
+    return render(request, 'esplora/opere.html', {'items': allitems})
 
 def vita_volta(request):
     return render(request, 'esplora/vita.html')
