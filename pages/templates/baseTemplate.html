@@ -5,64 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museo Volta - {% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="/static/css/style.css">
+  <!-- Font-awesome è per avere i loghi (es. fa-instagram) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   {% block head %}{% endblock %}
 </head>
 <body>
-  <!-- Header con barre di navigazione -->
+  <!-- Header con barre di navigazione (striscia logo - striscia menu - striscia breadcrumb) -->
   <header id="site-header">
-    <!-- Barra superiore con ricerca e lingua -->
+    <!-- Striscia logo con ricerca e lingua -->
     <div class="top-bar">
       <div class="container">
+        <!-- LANGUAGE - per ora non fa nulla -->
+        <div class="language-selector">
+          <select>
+            <option value="it">it</option>
+            <option value="en">en</option>
+            <option value="fr">fr</option>
+          </select>
+        </div>
+        <!-- LOGO - anche se in realtà è solo una scritta-->
         <div class="logo">
           <a href="/">
-            <span>MUSEO VOLTA</span>
+            <span>M U S E O / V O L T A</span>
           </a>
         </div>
-        <div class="top-bar-right">
-          <div class="search-box">
-            <form action="/search" method="get">
-              <input type="text" placeholder="Cerca..." name="q">
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-          </div>
-          <div class="language-selector">
-            <select>
-              <option value="it">Italiano</option>
-              <option value="en">English</option>
-              <option value="fr">Français</option>
-            </select>
-          </div>
+        <!-- SEARCH - per ora non fa nulla -->
+        <div class="search-box">
+          <form action="/search" method="get">
+            <input type="text" placeholder="Cerca..." name="q">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
         </div>
       </div>
     </div>
     
-    <!-- Barra menu principale -->
+    <!-- Barra MENU principale -->
     <nav class="main-nav">
       <div class="container">
         <ul class="nav-menu">
           <li class="menu-item has-submenu">
-            <a href="#" class="menu-link">Visita</a>
+            <a href="#" class="menu-link">V I S I T A</a>
             <ul class="submenu">
-              <li><a href="/visita/pianifica">Pianifica la tua visita</a></li>
-              <li><a href="/visita/orari">Tariffe e orari</a></li>
+              <li><a href="/visita/pianifica" class="destra">pianifica la tua visita</a></li>
+              <li><a href="/visita/orari" class="sinistra">tariffe e orari</a></li>
             </ul>
           </li>
           <li class="menu-item has-submenu">
-            <a href="#" class="menu-link">Esplora</a>
+            <a href="#" class="menu-link">E S P L O R A</a>
             <ul class="submenu">
-              <li><a href="/esplora/opere">Opere e invenzioni</a></li>
-              <li><a href="/esplora/vita">La vita di Volta</a></li>
+              <li><a href="/esplora/opere" class="destra">opere e invenzioni</a></li>
+              <li><a href="/esplora/vita" class="sinistra">la vita di Volta</a></li>
             </ul>
           </li>
-          <li class="menu-item">
-            <a href="/gioca" class="menu-link">Gioca</a>
+          <li class="menu-item has-submenu">
+            <a href="#" class="menu-link">G I O C A</a>
+            <ul class="submenu">
+              <li><a href="/gioca/wordle" class="destra">wordle</a></li>
+              <li><a href="/gioca/memory" class="sinistra">memory</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </nav>
     
-    <!-- Breadcrumb (visibile solo nelle pagine interne) -->
+    <!-- Breadcrumb (fa vedere una specie di path delle pagine aperte - non visibile in homepage) -->
     {% if request.path != '/' %}
     <div class="breadcrumb">
       <div class="container">
@@ -90,25 +96,35 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Museo Volta</h3>
-          <p>Viale Marconi, 1<br>22100 Como, Italia</p>
+          <h2 class="logo">M U S E O / V O L T A</h2>
+          <p>Viale Marconi, 1, 22100 Como, Italia</p>
           <p>Tel: +39 335 8489213<br>Fax: +39 031 268053<br>Email: musei.civici@comune.como.it</p>
         </div>
         <div class="footer-section">
           <h3>Orari di apertura</h3>
-          <p>Martedì - Domenica: 10:00 - 18:00<br>Lunedì: Chiuso</p>
-        </div>
-        <div class="footer-section">
-          <h3>Seguici</h3>
+          <div class="orari">
+            <div>
+              <h3>Lunedì</h3>
+              <p>Chiuso</p>
+            </div>
+            <div class="aperto">
+              <h3>Martedì - Domenica</h3>
+              <p>10:00 - 18:00</p>
+            </div>
+          </div>
           <div class="social-icons">
             <a href="https://www.facebook.com/Musei-Civici-Como-114230333552167/"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/museicivicicomo/"><i class="fab fa-instagram"></i></a>
             <a href="https://www.youtube.com/channel/UCX-oEQvg8rEAWse8E6tUpIg"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
+        <div class="footer-section">
+          <h3>Made with <i class="fas fa-heart"></i><br></h3>
+          <p>Konomi Simone<br>Simeone Leonardo<br>Mascetti Alessandro<br>Longoni Riccardo<br>Kmiotek Antonio</p>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 5INF2. Museo Volta. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 5INF2. M U S E O / V O L T A. Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>
