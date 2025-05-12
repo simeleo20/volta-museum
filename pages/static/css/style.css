@@ -181,11 +181,11 @@
   }
 
   .destra {
-    padding: 12px 25px 12px 600px;
+    padding: 12px 25px 12px 1000px;
   }
 
   .sinistra {
-    padding: 12px 600px 12px 25px;
+    padding: 12px 1000px 12px 25px;
   }
   
   /* Breadcrumb */

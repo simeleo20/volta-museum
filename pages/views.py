@@ -17,8 +17,11 @@ def opere(request):
 def vita_volta(request):
     return render(request, 'esplora/vita.html')
 
-def gioca(request):
-    return render(request, 'gioca.html')
+def gioca_wordle(request):
+    return render(request, 'gioca/wordle.html')
+
+def gioca_memory(request):
+    return render(request, 'gioca/memory.html')
 
 def search(request):
     query = request.GET.get('q', '')
