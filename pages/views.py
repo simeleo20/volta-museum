@@ -4,8 +4,32 @@ from django.template import loader
 from .models import Item, Event, Restoration, Image
 
 def home(request):
-    template = loader.get_template("home.html")
-    return HttpResponse(template.render())
+    return render(request, 'home.html')
+
+def pianifica_visita(request):
+    return render(request, 'visita/pianifica.html')
+
+def orari(request):
+    return render(request, 'visita/orari.html')
+
+def opere(request):
+    allitems = Item.objects.all()
+
+    return render(request, 'esplora/opere.html', {'items': allitems})
+
+def vita_volta(request):
+    return render(request, 'esplora/vita.html')
+
+def gioca_wordle(request):
+    return render(request, 'gioca/wordle.html')
+
+def gioca_memory(request):
+    return render(request, 'gioca/memory.html')
+
+def search(request):
+    query = request.GET.get('q', '')
+    # Implementa la logica di ricerca qui
+    return render(request, 'search.html', {'query': query, 'results': []})
 
 def gioco(request):
     template = loader.get_template("gioco.html")
