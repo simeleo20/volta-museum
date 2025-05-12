@@ -1,0 +1,70 @@
+{% extends "baseTemplate.html" %}
+
+{% block title %}{{ data.name }}{% endblock %}
+
+{% block breadcrumb %}
+<li><a href="/esplora/opere">Opere e Invenzioni</a></li>
+<li>{{ data.name }}</li>
+{% endblock %}
+
+{% block banner %}
+<div class="page-banner" style="background-image: url('/static/images/stanza-invenzioni.png');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h1>{{ data.name }}</h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="section">
+    {% if data.image %}
+    <div class="image-section">
+        <img src="{{ data.image.img.url }}" alt="{{ data.image.name }}">
+        <p><strong>Immagine:</strong> {{ data.image.description }}</p>
+    </div>
+    {% endif %}
+
+    <div class="details-section">
+        <h2>Descrizione</h2>
+        <p>{{ data.description }}</p>
+        <p><strong>Data:</strong> {{ data.date }}</p>
+        <p><strong>Tipo:</strong> {{ data.get_type_display }}</p>
+    </div>
+
+    {% if events %}
+    <div class="related-events">
+        <h2>Eventi Collegati</h2>
+        <ul>
+            {% for event in events %}
+            <li>
+                <strong>{{ event.name }}</strong> ({{ event.year }}) – {{ event.location }}<br>
+                {{ event.description }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if restorations %}
+    <div class="related-restorations">
+        <h2>Restauri Collegati</h2>
+        <ul>
+            {% for rest in restorations %}
+            <li>
+                <strong>{{ rest.get_type_display }}</strong> – {{ rest.date }}<br>
+                {{ rest.description }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block style %}
+    img {
+        max-width: 500px;
+        height: auto;
+    }
+{% endblock %}

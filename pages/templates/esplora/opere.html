@@ -19,5 +19,27 @@
 <section class="page-content">
   <h2>Esplora tutte le invenzioni di Alessandro Volta</h2>
   <p>da aggiungere in seguito... Masce</p>
+  {% for item in items %}
+    <section class="item-card">
+      <a href="/esplora/opere/{{ item.name }}" >
+        <div class="item-image">
+          <img src="{{ item.image.img.url }}" alt="{{ item.name }}">
+        </div>
+        <div class="item-details">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+
+        </div>
+      </a>
+    </section>
+  {% endfor %}
 </section>
+
+{% endblock %}
+
+{% block style %}
+    img {
+        max-width: 500px;
+        height: auto;
+    }
 {% endblock %}

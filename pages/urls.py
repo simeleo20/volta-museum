@@ -11,4 +11,5 @@ urlpatterns = [
     path('gioca/wordle/', views.gioca_wordle, name='gioca_wordle'),
     path('gioca/memory/', views.gioca_memory, name='gioca_memory'),
     path('search/', views.search, name='search'),
+    path('esplora/opere/<str:item_name>/', views.item, name='item'),
 ]
