@@ -1,24 +1,19 @@
 {% extends "baseTemplate.html" %}
-
-{% block title %}Gioca{% endblock %}
-
-{% block breadcrumb %}
-<li><span style="color: #666666;">Gioca</span></li><li><a href="/gioca/memory">Memory</a></li>
+{% load static %}
+{% block title %}
+Memory Game
 {% endblock %}
-
-{% block banner %}
-<div class="page-banner" style="background-image: url('/static/images/invenzione-upclose.png');">
-  <div class="banner-overlay"></div>
-  <div class="banner-content">
-    <h1>Metti in gioco la memoria</h1>
-  </div>
-</div>
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles2.css'%}">
 {% endblock %}
-
 {% block body %}
-<section class="page-content">
-  <h2>Metti in gioco la tua memoria: Trova le coppie</h2>
-  <p>da inserire la logica di gioco...</p>
-  <!-- inserisci QUI la logica di gioco -->
-</section>
+<div class="container">
+<h1>Memory Game</h1>
+<p>Trova tutte le coppie di carte uguali!</p>
+<div class="grid" id="memory-grid">
+<!-- Le carte saranno inserite dinamicamente con JavaScript -->
+</div>
+<p id="feedback"></p>
+</div>
+<script src="{% static 'script2.js' %}"></script>
 {% endblock %}

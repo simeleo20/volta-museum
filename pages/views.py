@@ -24,7 +24,7 @@ def gioca_wordle(request):
     return render(request, 'gioca/gioco.html')
 
 def gioca_memory(request):
-    return render(request, '/gioca/gioco.html')
+    return render(request, 'gioca/memory.html')
 
 def search(request):
     query = request.GET.get('q', '')
