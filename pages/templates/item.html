@@ -8,8 +8,11 @@
 {% endblock %}
 
 {% block banner %}
-<div class="banner">
+<div class="page-banner" style="background-image: url('/static/images/stanza-invenzioni.png');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
     <h1>{{ data.name }}</h1>
+  </div>
 </div>
 {% endblock %}
 
@@ -57,4 +60,11 @@
     </div>
     {% endif %}
 </div>
+{% endblock %}
+
+{% block style %}
+    img {
+        max-width: 500px;
+        height: auto;
+    }
 {% endblock %}
