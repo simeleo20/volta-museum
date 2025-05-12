@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from .models import Item, Event, Restoration, Image
@@ -31,16 +31,19 @@ def search(request):
     # Implementa la logica di ricerca qui
     return render(request, 'search.html', {'query': query, 'results': []})
 
-def item(request, item_name):
-    template = loader.get_template("item.html")
+def item(request, item_name): #prende dal db
+    oggetto = get_object_or_404(Item, name=item_name)
+    eventi = Event.objects.filter(item__name=item_name)
+    restauri = Restoration.objects.filter(item__name=item_name)
+
     context = {
         'item_name': item_name,
-        'data': Item.objects.get(name=item_name),
-        'events': Event.objects.filter(item=item_name),
-        'restorations': Restoration.objects.filter(item__name=item_name),
-
+        'data': oggetto,
+        'events': eventi,
+        'restorations': restauri,
     }
-    return HttpResponse(template.render())
+    return render(request, 'item.html', context)
+
 
 def images(request):
     allimages = Image.objects.all()
