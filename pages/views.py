@@ -21,19 +21,15 @@ def vita_volta(request):
     return render(request, 'esplora/vita.html')
 
 def gioca_wordle(request):
-    return render(request, 'gioca/wordle.html')
+    return render(request, 'gioca/gioco.html')
 
 def gioca_memory(request):
-    return render(request, 'gioca/memory.html')
+    return render(request, '/gioca/gioco.html')
 
 def search(request):
     query = request.GET.get('q', '')
     # Implementa la logica di ricerca qui
     return render(request, 'search.html', {'query': query, 'results': []})
-
-def gioco(request):
-    template = loader.get_template("gioco.html")
-    return HttpResponse(template.render())
 
 def item(request, item_name):
     template = loader.get_template("item.html")

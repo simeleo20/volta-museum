@@ -1,8 +1,8 @@
 // script.js
 
-const basePath = 'static/immagini'
+const basePath = '/static/immagini'
 // Array di nomi di file delle immagini nella cartella "immagini"
-const images = ["pila.png", "elettroforo.png",]; // aggiungere piu immaginii
+const images = ["pila.png", "elettroforo.png"]; // aggiungere piu immaginii
 
 let remainingImages = [...images]; // Copia dell'array per tenere traccia delle immagini rimanenti
 let currentImage = null;
